@@ -48,7 +48,7 @@ export function Book(props: JSX.IntrinsicElements['group']) {
         scale={[-2.49, -0.71, -0.54]}
       />
       <mesh
-        castShadow
+        castShadowk
         receiveShadow
         geometry={nodes.Cube002.geometry}
         material={nodes.Cube002.material}
