@@ -1,19 +1,10 @@
-import { Bloom, EffectComposer } from '@react-three/postprocessing'
+// import { angleToRadians } from '../utils/angle.ts'
 
 export function Lights(): JSX.Element {
   return (
     <>
-      <hemisphereLight intensity={1.2} />
-      <ambientLight intensity={0.5} />
-      <pointLight position={[0, 10, 0]} intensity={1} />
-      <pointLight position={[0, -10, 0]} intensity={1} />
-      <ambientLight args={['#fff', 0.5]} />
       <pointLight args={['#fff', 0.5, 100, 2]} position={[0, 10, 0]} castShadow />
-
-      <EffectComposer disableNormalPass>
-        <Bloom luminanceThreshold={0.95} mipmapBlur />
-      </EffectComposer>
-
+      <directionalLight args={['#fff', 1]} position={[10, 10, 5]} castShadow />
       <mesh scale={4} position={[0.75, -2, 0.5]} rotation={[-Math.PI / 2, 0, Math.PI / 2.5]}>
         <ringGeometry args={[0.9, 1, 4, 1]} />
         <meshStandardMaterial color="white" roughness={0.75} />

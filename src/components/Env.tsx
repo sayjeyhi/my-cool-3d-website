@@ -1,4 +1,5 @@
 import { Environment, Lightformer } from '@react-three/drei'
+import * as Three from 'three'
 
 export function Env({ perfSucks }: { perfSucks: boolean }) {
   return (
@@ -29,6 +30,12 @@ export function Env({ perfSucks }: { perfSucks: boolean }) {
           scale={[50, 2, 1]}
         />
       </group>
+
+      <mesh>
+        <sphereGeometry args={[50, 100, 100]} />
+        <meshBasicMaterial color={'#fff'} side={Three.BackSide} />
+      </mesh>
+
       {/* <Lightformer */}
       {/*  intensity={5} */}
       {/*  form="ring" */}
